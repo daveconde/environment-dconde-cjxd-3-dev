@@ -5,6 +5,9 @@ pipelineConfig:
       pipeline:
         agent:
           image: gcr.io/jenkinsxio/builder-go
+        environment:
+          - name: DEPLOY_NAMESPACE
+            value: jx
         stages:
         - name: pr
           steps:
@@ -17,13 +20,6 @@ pipelineConfig:
       pipeline:
         agent:
           image: gcr.io/jenkinsxio/builder-go
-        environment:
-        - name: DEPLOY_NAMESPACE
-          value: jx
-        - name: GIT_AUTHOR_NAME
-          value: daveconde
-        - name: GIT_AUTHOR_EMAIL
-          value: dconde@cloudbees.com
         stages:
         - name: release
           steps:
