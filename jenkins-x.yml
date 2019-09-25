@@ -4,7 +4,10 @@ pipelineConfig:
     pullRequest:
       pipeline:
         agent:
-          image: gcr.io/jenkinsxio/builder-go:0.1.759
+          image: gcr.io/jenkinsxio/builder-go
+        environment:
+          - name: DEPLOY_NAMESPACE
+            value: jx
         stages:
         - name: pr
           steps:
@@ -16,14 +19,7 @@ pipelineConfig:
     release:
       pipeline:
         agent:
-          image: gcr.io/jenkinsxio/builder-go:0.1.759
-        environment:
-        - name: DEPLOY_NAMESPACE
-          value: jx
-        - name: GIT_AUTHOR_NAME
-          value: daveconde
-        - name: GIT_AUTHOR_EMAIL
-          value: dconde@cloudbees.com
+          image: gcr.io/jenkinsxio/builder-go
         stages:
         - name: release
           steps:
