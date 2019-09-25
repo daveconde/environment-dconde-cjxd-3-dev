@@ -66,6 +66,6 @@ storage:
 vault: {}
 velero: {}
 versionStream:
-  ref: d89635ba69affed6e6439a889f8b89a4d9c2f6ab 
+  ref: 224d65a9452e04c1f8eb33f2d87db2df03a46c4d 
   url: https://github.com/cloudbees/cloudbees-jenkins-x-versions.git
 webhook: prow
