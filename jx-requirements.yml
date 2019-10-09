@@ -1,4 +1,8 @@
+autoUpdate:
+  enabled: false
+  schedule: ""
 cluster:
+  azure: {}
   clusterName: dconde-cjxd-3
   environmentGitOwner: daveconde
   gitKind: github
@@ -9,9 +13,33 @@ cluster:
   provider: gke
   zone: europe-west1-c
 environments:
-- key: dev
-- key: staging
-- key: production
+- ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: ""
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: dev
+- ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: ""
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: staging
+- ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: ""
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: production
 gitops: true
 ingress:
   domain: 35.205.138.189.nip.io
@@ -24,6 +52,9 @@ ingress:
 kaniko: true
 secretStorage: vault
 storage:
+  backup:
+    enabled: false
+    url: ""
   logs:
     enabled: true
     url: gs://dconde-cjxd-3-logs-1461652f-7ae5-4d19-8a76-115701f0602f
@@ -33,7 +64,9 @@ storage:
   repository:
     enabled: true
     url: gs://dconde-cjxd-3-logs-1461652f-7ae5-4d19-8a76-115701f0602f
+vault: {}
+velero: {}
 versionStream:
-  ref: 224d65a9452e04c1f8eb33f2d87db2df03a46c4d 
+  ref: 24826e2cbb526eb24a39bf4b8dbd30ddc3d9e364
   url: https://github.com/cloudbees/cloudbees-jenkins-x-versions.git
 webhook: prow
